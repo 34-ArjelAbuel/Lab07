@@ -6,7 +6,7 @@ using UnityEngine;
 public class ObstacleSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject Obstacle = null;
-    [SerializeField] private float SpawnInterval = 1;
+    [SerializeField] private float SpawnInterval = 1.5f;
     private float NextSpawn = 0;
 
     void Update()

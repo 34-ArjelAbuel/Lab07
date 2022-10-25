@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class Player : MonoBehaviour
 {
@@ -22,15 +24,10 @@ public class Player : MonoBehaviour
             thisAnimation.Play();
             rb.velocity = Vector2.up * velocity;
         }
-        if (transform.position.x <= -9)
+        if (transform.position.y <= -4.5)
         {
             Destroy(gameObject);
-            GameManager.thisManager.GameOver();
-        }
-        if (transform.position.x >= 9)
-        {
-            Destroy(gameObject);
-            GameManager.thisManager.GameOver();
+            SceneManager.LoadScene("GameLose");
         }
     }
     public void OnTriggerEnter(Collider other)
@@ -38,6 +35,10 @@ public class Player : MonoBehaviour
         if(other.gameObject.tag == "score")
         {
             GameManager.thisManager.UpdateScore(1);
+        }
+        if (other.gameObject.tag == "dead")
+        {
+            SceneManager.LoadScene("GameLose");
         }
     }
 }

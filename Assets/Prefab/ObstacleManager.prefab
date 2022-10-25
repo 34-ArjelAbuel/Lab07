@@ -45,4 +45,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Obstacle: {fileID: 1662584973375887002, guid: ed5b6e139639a11419909b026eb40da8,
     type: 3}
+  reverse: {fileID: 3531591778435386091, guid: 5cb106986a5a5364ab0107b086815d28, type: 3}
   SpawnInterval: 1
