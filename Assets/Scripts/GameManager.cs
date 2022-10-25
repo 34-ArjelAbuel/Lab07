@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Text Txt_Score = null;
     [SerializeField] private Text Txt_Message = null;
     private int Score = 0;
+    public GameObject player;
+    public GameObject spawn;
 
     void Start()
     {
@@ -34,6 +36,8 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
         Txt_Message.text = "";
         Txt_Score.text = "SCORE : 0";
+        Instantiate(player, spawn.transform.position, Quaternion.identity);
+        
     }
 
     public void GameOver()
